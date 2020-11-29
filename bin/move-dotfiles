@@ -18,6 +18,6 @@ cp ~/.zshrc ~/git/dotfiles
 # commit
 cd ~/git/dotfiles
 git add .
-git commit -m 'backup made on $(date "+%a %Y/%m/%d %T")'
+git commit -m "backup made on $(date "+%a %Y/%m/%d %T")"
 git push
 
