@@ -1,0 +1,3 @@
+#!/bin/zsh
+firefox -new-window -P "penis-lol" --kiosk https://dynalist.io/
+

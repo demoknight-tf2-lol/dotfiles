@@ -1,0 +1,22 @@
+[volume]
+command=/home/ninja/i3blocks-scripts/volume
+markup=pango
+min_width= 100%
+align=right
+separator_block_width=21
+interval=10
+signal=1
+
+[battery]
+command=python /home/ninja/i3blocks-scripts/battery.py
+interval=5
+min_width= 100% --:--
+separator_block_width=21
+align=right
+markup=pango
+
+[time]
+command=date "+%a %Y/%m/%d %T"
+interval=1
+separator_block_width=21
+
