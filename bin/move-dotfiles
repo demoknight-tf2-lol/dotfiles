@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+# scripts
+cp -r ~/i3blocks-scripts ~/git/dotfiles
+cp -r ~/bin ~/git/dotfiles
+
+# config files
+cp -r ~/.config/i3 ~/git/dotfiles/.config
+cp -r ~/.config/i3 ~/git/dotfiles/.config
+cp -r ~/.config/nvim ~/git/dotfiles/.config
+cp ~/.config/picom.conf ~/git/dotfiles/.config
+
+# rc files
+cp ~/.nvimrc ~/git/dotfiles
+cp ~/.zshrc ~/git/dotfiles
+
+
+# commit
+cd ~/git/dotfiles
+git add .
+git commit -m 'backup made on $(date "+%a %Y/%m/%d %T")'
+git push
+
