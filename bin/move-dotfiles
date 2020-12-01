@@ -8,7 +8,9 @@ cp -r ~/bin ~/git/dotfiles
 cp -r ~/.config/i3 ~/git/dotfiles/.config
 cp -r ~/.config/i3 ~/git/dotfiles/.config
 cp -r ~/.config/nvim ~/git/dotfiles/.config
+cp -r ~/.config/qpdfview ~/git/dotfiles/.config
 cp ~/.config/picom.conf ~/git/dotfiles/.config
+
 
 # rc files
 cp ~/.nvimrc ~/git/dotfiles

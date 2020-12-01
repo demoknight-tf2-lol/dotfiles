@@ -136,6 +136,7 @@ bindsym $mod+r mode "resize"
 
 exec_always feh --bg-scale $(find /home/ninja/Pictures/desktop-bg -type f | shuf -n 1)
 exec picom
+exec unclutter --timeout 3
 gaps inner 15
 
 # == i3/SYSTEM COMMANDS ==
@@ -148,12 +149,13 @@ bindsym $mod+Control+r exec shutdown -r 0
 bindsym $mod+Control+l exec i3lock -i $(find /home/ninja/Pictures/lock-bg -type f | shuf -n 1)
 
 # == COLORS ==
+# transparent borders don't work (yet) https://github.com/Airblader/i3/issues/313
 
-set $bg-color 	         #000000ee
+set $bg-color 	         #ffffffff
 set $inactive-bg-color   #00000000
-set $text-color          #ffffffff
-set $inactive-text-color #aaaaaaff
-set $urgent-bg-color     #ff4900ff
+set $text-color          #000000ff
+set $inactive-text-color #ffffffff
+set $urgent-bg-color     #0049ffff
 
 # window colors
 #			border			background		text			indicator	child_border
@@ -201,4 +203,5 @@ bindsym $mod+Shift+w exec feh --bg-scale $(find /home/ninja/Pictures/desktop-bg 
 bindsym $mod+Shift+x exec urxvt -e nvim /home/ninja/haxx/cheat
 bindsym $mod+Shift+n exec urxvt -e nvim
 bindsym $mod+Shift+d exec dynalist
+bindsym $mod+Shift+v exec pavucontrol
 
