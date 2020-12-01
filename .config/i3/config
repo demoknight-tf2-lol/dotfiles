@@ -147,13 +147,13 @@ bindsym $mod+Control+s exec shutdown -h 0
 bindsym $mod+Control+r exec shutdown -r 0
 bindsym $mod+Control+l exec i3lock -i $(find /home/ninja/Pictures/lock-bg -type f | shuf -n 1)
 
-# == COLOURS ==
+# == COLORS ==
 
 set $bg-color 	         #000000ee
 set $inactive-bg-color   #00000000
 set $text-color          #ffffffff
 set $inactive-text-color #aaaaaaff
-set $urgent-bg-color     #00ff00ff
+set $urgent-bg-color     #ff4900ff
 
 # window colors
 #			border			background		text			indicator	child_border
@@ -179,8 +179,8 @@ bar {
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_volume pkill -RTMIN+1 -F /tmp/i3blocks.pid
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +10%; $refresh_volume"
-bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -10%; $refresh_volume"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +5%; $refresh_volume"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -5%; $refresh_volume"
 bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle; $refresh_volume"
 bindsym XF86AudioMicMute exec --no-startup-id "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
 
@@ -201,5 +201,4 @@ bindsym $mod+Shift+w exec feh --bg-scale $(find /home/ninja/Pictures/desktop-bg 
 bindsym $mod+Shift+x exec urxvt -e nvim /home/ninja/haxx/cheat
 bindsym $mod+Shift+n exec urxvt -e nvim
 bindsym $mod+Shift+d exec dynalist
-
 

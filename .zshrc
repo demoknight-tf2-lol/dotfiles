@@ -41,9 +41,12 @@ _fix_cursor() {
 
 precmd_functions+=(_fix_cursor)
 
-alias pingarch="ping archlinux.org"
+alias pa="ping archlinux.org"
 alias termbin="nc termbin.com 9999"
 alias l="ls -al --sort=time"
 alias kj="sudo journalctl -ke"
 alias cl="xclip -sel clipboard"
+alias vim="nvim"
+alias ringmsg="sudo journalctl -ke"
+alias iwlan0="sudo iwctl station wlan0"
 
