@@ -49,7 +49,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
 # bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -69,7 +69,7 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:"
 set $ws2 "2:"
-set $ws3 "3:"
+set $ws3 "3:"
 set $ws4 "4:"
 set $ws5 "5:5"
 set $ws6 "6:6"
@@ -126,10 +126,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# == GRAPHICS STUFF ==
+# == OTHER CONFIG ==
 
 exec_always feh --bg-scale $(find /home/ninja/Pictures/desktop-bg -type f | shuf -n 1)
-exec picom
+exec xss-lock -- i3lock -i $(find /home/ninja/Pictures/lock-bg -type f | shuf -n 1)
+exec picom --experimental-backends
 exec unclutter --timeout 3
 gaps inner 15
 
@@ -190,7 +191,7 @@ bindsym --release Shift+Print exec scrot -s "/home/ninja/Pictures/$(date '+%d-%m
 
 # == APPS ==
 
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+c exec chromium
 bindsym $mod+Shift+e exec urxvt -e nnn
 bindsym $mod+Shift+t exec urxvt -e htop
 bindsym $mod+Shift+w exec feh --bg-scale $(find /home/ninja/Pictures/desktop-bg -type f | shuf -n 1)
@@ -200,9 +201,8 @@ bindsym $mod+Shift+d exec dynalist
 bindsym $mod+Shift+v exec pavucontrol
 
 # assign specific windows to different workspaces
-# assign [title="Discord — Mozilla Firefox"] $ws8
-for_window [title="Discord — Mozilla Firefox"] move to workspace $ws8
-for_window [title="Dynalist — Mozilla Firefox"] move to workspace $ws2
+assign [title="discord.com_/app"] $ws8
+assign [title="dynalist.io_/"] $ws2
 for_window [class="Pavucontrol"] floating enable
 for_window [class="."] border pixel 0
 

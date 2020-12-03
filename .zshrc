@@ -48,5 +48,5 @@ alias kj="sudo journalctl -ke"
 alias cl="xclip -sel clipboard"
 alias vim="nvim"
 alias ringmsg="sudo journalctl -ke"
-alias iwlan0="sudo iwctl station wlan0"
+alias iwlan0="iwctl station wlan0"
 
