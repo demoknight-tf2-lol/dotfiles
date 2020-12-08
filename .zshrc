@@ -49,4 +49,7 @@ alias cl="xclip -sel clipboard"
 alias vim="nvim"
 alias ringmsg="sudo journalctl -ke"
 alias iwlan0="iwctl station wlan0"
+alias upd='date "+%a %Y/%m/%d %T" > ~/last-update-time && sudo pacman -Syu'
+alias pacs="sudo pacman -S"
+alias pacss="pacman -Ss"
 
