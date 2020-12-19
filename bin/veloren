@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+prime-run flatpak run net.veloren.veloren &; disown

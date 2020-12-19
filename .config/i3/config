@@ -192,20 +192,27 @@ bindsym --release Shift+Print exec scrot -s "/home/ninja/Pictures/$(date '+%d-%m
 # == APPS ==
 
 bindsym $mod+Shift+w exec feh --bg-scale $(find /home/ninja/Pictures/desktop-bg -type f | shuf -n 1)
-bindsym $mod+Shift+e exec urxvt -e nnn
+bindsym $mod+Shift+e exec urxvt -e nnn -H
 bindsym $mod+Shift+t exec urxvt -e htop
 bindsym $mod+Shift+p exec keepassxc
+bindsym $mod+Shift+s exec qpdfview /home/ninja/schedule.pdf
 bindsym $mod+Shift+d exec dynalist
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+x exec urxvt -e nvim /home/ninja/haxx/cheat
+# bindsym $mod+Shift+c exec flatpak run com.github.Eloston.UngoogledChromium --profile-directory=Default --new-window
 bindsym $mod+Shift+v exec pavucontrol
 bindsym $mod+Shift+n exec urxvt -e nvim
 
 # assign specific windows to different workspaces
-for_window [title="Home - Dynalist — Mozilla Firefox"] move container to workspace $ws2, fullscreen disable global
-for_window [title="Discord — Mozilla Firefox"] move container to workspace $ws8, fullscreen disable global
+# assign [title="discord.com_/app"] $ws8
+# assign [title="dynalist.io_/"] $ws2
+for_window [title="Dynalist — Mozilla Firefox"] move to workspace $ws2, fullscreen disable global
+for_window [title="Discord — Mozilla Firefox"] move to workspace $ws8, fullscreen disable global
 assign [class="Steam"] $ws4
+assign [class="veloren-voxygen"] $ws4
 assign [class="VirtualBox Machine"] $ws7
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Leafpad"] floating enable
+for_window [class="Gthumb"] floating enable
 for_window [class="."] border pixel 0
 

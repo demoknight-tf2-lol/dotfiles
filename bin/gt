@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+gthumb "/home/ninja/Pictures/$(ls -l --sort=time --color=never Pictures | sed -nr '2s/^([^ ]+\s*){8}\s*(.+?)$/\2/p')"
+

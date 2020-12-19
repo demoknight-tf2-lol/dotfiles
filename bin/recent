@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+echo "$1/$(ls -l --sort=time --color=never $1 | sed -nr '2s/^([^ ]+\s*){8}\s*(.+?)$/\2/p')"

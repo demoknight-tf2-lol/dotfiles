@@ -1,0 +1,9 @@
+#!/bin/zsh
+firejail --x11=xephyr --xephyr-screen="$(cat ~/gaps-res.txt)" prime-run openbox &
+sleep 2
+display_id="$(firemon --x11 | tail -n 2 | head -n 1 | sed -r "s/^.*DISPLAY :([0-9]+).*$/\1/" | xargs)"
+
+echo $display_id
+
+DISPLAY=:$display_id firejail --profile=$1 prime-run ${@}
+

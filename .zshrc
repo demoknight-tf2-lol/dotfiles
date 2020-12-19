@@ -43,13 +43,17 @@ precmd_functions+=(_fix_cursor)
 
 alias pa="ping archlinux.org"
 alias termbin="nc termbin.com 9999"
-alias l="ls -al --sort=time"
 alias kj="sudo journalctl -ke"
 alias cl="xclip -sel clipboard"
-alias vim="nvim"
 alias ringmsg="sudo journalctl -ke"
 alias iwlan0="iwctl station wlan0"
-alias upd='date "+%a %Y/%m/%d %T" > ~/last-update-time && sudo pacman -Syu'
-alias pacs="sudo pacman -S"
+alias pacu='echo "last updated: $(cat ~/last-update-time)" && sudo pacman -Syu && date "+%a %Y/%m/%d %T" > ~/last-update-time'
+alias pacs="sudo pacman -S --needed"
 alias pacss="pacman -Ss"
+alias pacr="sudo pacman -Rns"
+alias n="nnn -H"
+alias vim="nvim"
+alias chrome="flatpak run com.github.Eloston.UngoogledChromium"
+alias fjd="firejail --x11=xephyr --xephyr-screen=1888x1062 openbox"
+alias x="exit"
 

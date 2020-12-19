@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+ls -al --sort=time --color=always $1 | less -R
+
