@@ -1,13 +1,17 @@
 #!/bin/zsh
 
 # scripts
+rm -r ~/git/dotfiles/i3blocks-scripts 
 cp -r ~/i3blocks-scripts ~/git/dotfiles
+rm -r ~/git/dotfiles/bin 
 cp -r ~/bin ~/git/dotfiles
 
 # config files
+rm -r ~/git/dotfiles/.config/i3 
 cp -r ~/.config/i3 ~/git/dotfiles/.config
-cp -r ~/.config/i3 ~/git/dotfiles/.config
+rm -r ~/git/dotfiles/.config/nvim 
 cp -r ~/.config/nvim ~/git/dotfiles/.config
+rm -r ~/git/dotfiles/.config/qpdfview 
 cp -r ~/.config/qpdfview ~/git/dotfiles/.config
 cp ~/.config/picom.conf ~/git/dotfiles/.config
 
