@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -f "$HOME/.xinitrc-$1" ]
+then
+	cp "$HOME/.xinitrc-$1" "$HOME/.xinitrc"
+	exec startx
+else
+	echo "$1 is not installed/configured"
+fi
+

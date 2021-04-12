@@ -1,5 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
+
+firefox -P "penis-lol" --kiosk --new-window "https://dynalist.io"
 # flatpak run com.github.Eloston.UngoogledChromium --profile-directory="Profile 2" --app=https://dynalist.io/
-
-firefox -P "penis-lol" --kiosk --new-window "https://dynalist.io/"
-

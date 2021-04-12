@@ -113,11 +113,6 @@ mode "resize" {
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -130,9 +125,10 @@ bindsym $mod+r mode "resize"
 
 exec_always feh --bg-scale $(find /home/ninja/Pictures/desktop-bg -type f | shuf -n 1)
 exec xss-lock -- i3lock -i $(find /home/ninja/Pictures/lock-bg -type f | shuf -n 1)
-exec picom --experimental-backends
+exec picom
 exec unclutter --timeout 3
 gaps inner 15
+smart_gaps on
 
 # == i3/SYSTEM COMMANDS ==
 
@@ -182,19 +178,22 @@ bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ t
 bindsym XF86AudioMicMute exec --no-startup-id "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen XF86MonBrightnessDown
+set $refresh_brightness pkill -RTMIN+2 -F /tmp/i3blocks.pid
+bindsym XF86MonBrightnessUp exec "brightnessctl s 10%+; $refresh_brightness"
+bindsym XF86MonBrightnessDown exec "brightnessctl s 10%-; $refresh_brightness"
 
 # Screenshots
-bindsym --release Print exec scrot "/home/ninja/Pictures/$(date '+%d-%m-%Y %T').png"
-bindsym --release Shift+Print exec scrot -s "/home/ninja/Pictures/$(date '+%d-%m-%Y %T').png" 
+bindsym --release Print exec screengrab -f
+bindsym --release Shift+Print exec screengrab -r
+bindsym --release $mod+Print exec screengrab -a
 
 # == APPS ==
 
 bindsym $mod+Shift+w exec feh --bg-scale $(find /home/ninja/Pictures/desktop-bg -type f | shuf -n 1)
-bindsym $mod+Shift+e exec urxvt -e nnn -H
-bindsym $mod+Shift+t exec urxvt -e htop
+bindsym $mod+Shift+e exec pcmanfm
+bindsym $mod+Shift+t exec torbrowser-launcher
 bindsym $mod+Shift+p exec keepassxc
+bindsym $mod+Shift+a exec anki
 bindsym $mod+Shift+s exec qpdfview /home/ninja/schedule.pdf
 bindsym $mod+Shift+d exec dynalist
 bindsym $mod+Shift+f exec firefox
@@ -203,14 +202,18 @@ bindsym $mod+Shift+x exec urxvt -e nvim /home/ninja/haxx/cheat
 bindsym $mod+Shift+v exec pavucontrol
 bindsym $mod+Shift+n exec urxvt -e nvim
 
-# assign specific windows to different workspaces
-# assign [title="discord.com_/app"] $ws8
-# assign [title="dynalist.io_/"] $ws2
+# assign properties to specific windows
+assign [title="discord.com_/app"] $ws8
+assign [title="dynalist.io_/"] $ws2
 for_window [title="Dynalist — Mozilla Firefox"] move to workspace $ws2, fullscreen disable global
 for_window [title="Discord — Mozilla Firefox"] move to workspace $ws8, fullscreen disable global
+assign [class="Anki"] $ws1
 assign [class="Steam"] $ws4
+assign [title="Steam"] $ws4
+for_window [title="Origin"] floating enable
 assign [class="veloren-voxygen"] $ws4
 assign [class="VirtualBox Machine"] $ws7
+assign [class="screengrab"] $ws9
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Leafpad"] floating enable
 for_window [class="Gthumb"] floating enable

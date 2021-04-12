@@ -1,5 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/ninja/random-shit/bash/if.sh'
+let g:netrw_dirhist_7='/home/ninja/random-shit'
+let g:netrw_dirhist_6='/home/ninja/.local/share/nvim/site/autoload'
+let g:netrw_dirhist_5='/home/ninja/.local/share/nvim/site'
+let g:netrw_dirhist_4='/home/ninja/.local/share/nvim'
 let g:netrw_dirhist_3='/home/ninja/.config/i3'
 let g:netrw_dirhist_2='/home/ninja/.config/qpdfview'
 let g:netrw_dirhist_1='/home/ninja/school'

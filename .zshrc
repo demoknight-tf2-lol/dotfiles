@@ -41,7 +41,7 @@ _fix_cursor() {
 
 precmd_functions+=(_fix_cursor)
 
-alias pa="ping archlinux.org"
+alias pa="ping -c 3 google.com"
 alias termbin="nc termbin.com 9999"
 alias kj="sudo journalctl -ke"
 alias cl="xclip -sel clipboard"
@@ -51,9 +51,10 @@ alias pacu='echo "last updated: $(cat ~/last-update-time)" && sudo pacman -Syu &
 alias pacs="sudo pacman -S --needed"
 alias pacss="pacman -Ss"
 alias pacr="sudo pacman -Rns"
-alias n="nnn -H"
 alias vim="nvim"
 alias chrome="flatpak run com.github.Eloston.UngoogledChromium"
 alias fjd="firejail --x11=xephyr --xephyr-screen=1888x1062 openbox"
 alias x="exit"
+alias aur=". aur-dl"
+alias xmrfast="sudo xmrig -u $(cat ~/xmr-addresses/ninja) -o $(cat ~/xmr-addresses/current-pool) --pause-on-battery -p"
 

@@ -15,11 +15,10 @@ rm -r ~/git/dotfiles/.config/qpdfview
 cp -r ~/.config/qpdfview ~/git/dotfiles/.config
 cp ~/.config/picom.conf ~/git/dotfiles/.config
 
-
-# rc files
+# other files
 cp ~/.nvimrc ~/git/dotfiles
 cp ~/.zshrc ~/git/dotfiles
-
+cp ~/.zprofile ~/git/dotfiles
 
 # commit
 cd ~/git/dotfiles
